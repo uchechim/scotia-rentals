@@ -1,6 +1,6 @@
 # Scotia Rentals
 
-Simple overview of use/purpose.
+A simple overview of use/purpose.
 
 ## Description
 
@@ -11,7 +11,7 @@ Simple overview of use/purpose.
 ### Dependencies
 
 * Working IDE - Preferably VSCode
-* Unix or Windows Based Operating System.
+* Unix or Windows-based Operating System.
 
 ### Installing
 * Initial Setup
@@ -40,7 +40,7 @@ code blocks for commands
 
 Uchenna Chima
 - https://www.linkedin.com/in/uchenna-chima-15123b152/
-- (https://www.youtube.com/@uchecodez)
+- https://www.youtube.com/@uchecodez
 
 ## Version History
 
