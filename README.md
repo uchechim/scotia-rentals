@@ -40,7 +40,7 @@ code blocks for commands
 
 Uchenna Chima
 - https://www.linkedin.com/in/uchenna-chima-15123b152/
-[-](https://www.youtube.com/@uchecodez)
+- (https://www.youtube.com/@uchecodez)
 
 ## Version History
 
