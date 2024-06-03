@@ -39,7 +39,7 @@ code blocks for commands
 ## Authors
 
 Uchenna Chima
-[-](https://www.linkedin.com/in/uchenna-chima-15123b152/)
+- https://www.linkedin.com/in/uchenna-chima-15123b152/
 [-](https://www.youtube.com/@uchecodez)
 
 ## Version History
