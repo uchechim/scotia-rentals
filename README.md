@@ -1,6 +1,6 @@
 # Scotia Rentals
 
-A simple overview of use/purpose.
+The purpose for this application is to create a safe envorionment for landlords and renters to interact with eachother. By providing discreet user work flows, scotia rentals aims to provide a flawless user experience that accomodates all parties to their maximum potential.
 
 ## Description
 
@@ -30,7 +30,7 @@ A simple overview of use/purpose.
 * Note: The front-end may require more compute power than the minimal settings provided on AWS.
 * For the VPC, configure security groups to allow the correct inbound/outbound connections (for simplicity add inbound/outbound anywhere @0.0.0.0).
 
-* Frontend Setup
+#### Frontend Setup
   
 * Ensure you have node installed on your machine -> https://nodejs.org/en/download/package-manager
 * Clone this repository into your local machine.
@@ -38,7 +38,7 @@ A simple overview of use/purpose.
 * Run ```npm install``` to install the required dependencies for the front-end application
 
 
-* Backend Setup
+#### Backend Setup
 * Step-by-step bullets
 ```
 code blocks for commands
