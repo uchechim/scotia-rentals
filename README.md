@@ -55,7 +55,7 @@ The purpose for this application is to create a safe envorionment for landlords 
      - aws_secret_access_key_val -> With the id of the secret access key you created
 * 
 
-### Hosting the Application on the Cloud  
+### Hosting the Application on the Cloud (AWS)  
 ###### _Note: It is ***HIGHLY*** recommended to complete all previous steps prior to following the subsequent instructions._
 
 #### Frontend Setup 
