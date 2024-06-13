@@ -35,6 +35,7 @@ The purpose for this application is to create a safe envorionment for landlords 
 ###### _Note: The front-end may require more compute power than the minimal settings provided for a typical EC2 instance on AWS._
 ###### _Note: While configuring AWS services, be wary of the prices and opt to choose the options that fit your applications demands and budget._
 * For the VPC, configure security groups to allow the correct inbound/outbound connections (for simplicity add inbound/outbound anywhere @0.0.0.0).
+* For the RDS, ensure that it's publically accessible & corresponding route tables have IGW's
 
 #### Frontend Setup (Local-Development)
 * Clone this repository into your local machine.
