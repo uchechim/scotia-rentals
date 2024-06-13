@@ -19,8 +19,7 @@ The purpose for this application is to create a safe envorionment for landlords 
 * Pip -> https://packaging.python.org/en/latest/tutorials/installing-packages/
 ###### _Note: Pip is used to install all required Python libraries such as Flask. For the libraries needed, refer to the "requirements.txt" file located in the "server" directory._
 
-
-### Executing program on a local machine
+### Hosting Application Locally
 
 #### Cloud Setup
 * This project currently utilizes 7 services from AWS:
@@ -39,26 +38,25 @@ The purpose for this application is to create a safe envorionment for landlords 
 #### Frontend Setup (Local-Development)
 * Clone this repository into your local machine.
 * Navigate (cd) to the "client" folder.
-* Run ```npm install``` to install the required dependencies for the front-end application
-* Run ```npm start``` to host the React
-
+* Run ```npm install --force``` to install the required dependencies for the front-end application
+* Run ```npm start``` to run the front-end application locally.
 
 #### Backend Setup (Local-Development)
 * Step-by-step bullets
 ```
 code blocks for commands
 ```
-#### Frontend Setup (Cloud-Based-Development)
-* Clone this repository into your local machine.
-* Navigate (cd) to the "client" folder.
-* Run ```npm install``` to install the required dependencies for the front-end application
+
+### Hosting the Application on the cloud - 
+###### _Note: It is ***HIGHLY*** recommended to complete all previous steps prior to following the subsequent instructions._
+
+#### Cloud Setup
+
+#### Frontend Setup (Local-Development)
+
+#### Backend Setup (Local-Development)
 
 
-#### Backend Setup (Cloud-Based-Development)
-* Step-by-step bullets
-```
-code blocks for commands
-```
 ## Authors
 
 Uchenna Chima
