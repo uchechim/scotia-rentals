@@ -12,11 +12,12 @@ The purpose for this application is to create a safe envorionment for landlords 
 
 * Working IDE - Preferably VSCode
 * Unix or Windows-based Operating System.
+* NodeJS -> -> https://nodejs.org/en/download/package-manager
+* AWS Account (free-tier would suffice)
 
 ### Executing program on a local machine
 
 #### Cloud Setup
-* Ensure you have created an account on AWS (free-tier would suffice)
 * This project currently utilizes 7 services from AWS:
    - VPC
    - ElasticBeanstalk
@@ -31,8 +32,6 @@ The purpose for this application is to create a safe envorionment for landlords 
 * For the VPC, configure security groups to allow the correct inbound/outbound connections (for simplicity add inbound/outbound anywhere @0.0.0.0).
 
 #### Frontend Setup
-  
-* Ensure you have node installed on your machine -> https://nodejs.org/en/download/package-manager
 * Clone this repository into your local machine.
 * Navigate (cd) to the "client" folder.
 * Run ```npm install``` to install the required dependencies for the front-end application
