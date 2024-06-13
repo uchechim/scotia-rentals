@@ -59,8 +59,10 @@ The purpose for this application is to create a safe envorionment for landlords 
 ###### _Note: It is ***HIGHLY*** recommended to complete all previous steps prior to following the subsequent instructions._
 
 #### Frontend Setup 
-
+* EC2 + NGINX
+  
 #### Backend Setup 
+* ElasticBeanstalk
 
 
 ## Authors
