@@ -31,7 +31,7 @@ The purpose for this application is to create a safe envorionment for landlords 
    - AWS RDS (Aurora)
    - S3
      
-* On your AWS account, create instances of the following services: VPC, EC2, RDS (Aurora MySQL Compatible), S3, AWS Backup
+* On your AWS account, create instances of the following services: VPC, EC2, RDS (Aurora MySQL Compatible), S3, AWS Backup 
 ###### _Note: The front-end may require more compute power than the minimal settings provided for a typical EC2 instance on AWS._
 ###### _Note: While configuring AWS services, be wary of the prices and opt to choose the options that fit your applications demands and budget._
 * For the VPC, configure security groups to allow the correct inbound/outbound connections (for simplicity add inbound/outbound anywhere @0.0.0.0).
@@ -55,7 +55,9 @@ The purpose for this application is to create a safe envorionment for landlords 
      - region_name_val -> With the region name your AWS account is operating in
      - aws_access_key_id_val -> With the id of the access key you created
      - aws_secret_access_key_val -> With the id of the secret access key you created
-* run the backend application using: ```python application.py```
+* Run the backend application using: ```python application.py```
+* At this point, the application will require you to reconfigure API endpoints to be interactive.
+* Once you reach this stage, refer to "Hostng the Application on the Cloud (AWS)" in order to fully integrate and get the application up and running.
 
 ### Hosting the Application on the Cloud (AWS)  
 ###### _Note: It is ***HIGHLY*** recommended to complete all previous steps prior to following the subsequent instructions._
