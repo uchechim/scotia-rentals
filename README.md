@@ -12,8 +12,13 @@ The purpose for this application is to create a safe envorionment for landlords 
 
 * Working IDE - Preferably VSCode
 * Unix or Windows-based Operating System.
-* NodeJS -> https://nodejs.org/en/download/package-manager
 * AWS Account (free-tier would suffice)
+* NodeJS -> https://nodejs.org/en/download/package-manager
+* ReactJS -> https://react.dev/learn/installation
+* Python 3+ -> https://www.python.org/downloads/
+* Pip -> https://packaging.python.org/en/latest/tutorials/installing-packages/
+###### _Note: Pip is used to install all required Python libraries such as Flask. For the libraries needed, refer to the "requirements.txt" file located in the "server" directory._
+
 
 ### Executing program on a local machine
 
@@ -31,18 +36,29 @@ The purpose for this application is to create a safe envorionment for landlords 
 ###### _Note: The front-end may require more compute power than the minimal settings provided for a typical EC2 instance on AWS._
 * For the VPC, configure security groups to allow the correct inbound/outbound connections (for simplicity add inbound/outbound anywhere @0.0.0.0).
 
-#### Frontend Setup
+#### Frontend Setup (Local-Development)
+* Clone this repository into your local machine.
+* Navigate (cd) to the "client" folder.
+* Run ```npm install``` to install the required dependencies for the front-end application
+* Run ```npm start``` to host the React
+
+
+#### Backend Setup (Local-Development)
+* Step-by-step bullets
+```
+code blocks for commands
+```
+#### Frontend Setup (Cloud-Based-Development)
 * Clone this repository into your local machine.
 * Navigate (cd) to the "client" folder.
 * Run ```npm install``` to install the required dependencies for the front-end application
 
 
-#### Backend Setup
+#### Backend Setup (Cloud-Based-Development)
 * Step-by-step bullets
 ```
 code blocks for commands
 ```
-
 ## Authors
 
 Uchenna Chima
