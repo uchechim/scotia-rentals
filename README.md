@@ -15,7 +15,7 @@ A simple overview of use/purpose.
 
 ### Executing program on a local machine
 
-## Cloud Setup
+#### Cloud Setup
 * Ensure you have created an account on AWS (free-tier would suffice)
 * This project currently utilizes 7 services from AWS:
    - VPC
