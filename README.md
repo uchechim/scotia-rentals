@@ -12,7 +12,7 @@ The purpose for this application is to create a safe envorionment for landlords 
 
 * Working IDE - Preferably VSCode
 * Unix or Windows-based Operating System.
-* NodeJS -> -> https://nodejs.org/en/download/package-manager
+* NodeJS -> https://nodejs.org/en/download/package-manager
 * AWS Account (free-tier would suffice)
 
 ### Executing program on a local machine
