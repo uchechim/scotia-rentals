@@ -43,6 +43,7 @@ The purpose for this application is to create a safe envorionment for landlords 
 * Run ```npm start``` to run the front-end application locally.
 
 #### Backend Setup (Local-Development)
+* Navigate (cd) to the "server" folder.
 * Refer to the requirements.txt and install all required libraries via ```pip install {library_name}``` 
 * Create an Access Key via AWS
 * Retrieve the Access key and Secret access key id's via your AWS account and replace the following lines of code in the 'application.py' folder:
@@ -53,7 +54,7 @@ The purpose for this application is to create a safe envorionment for landlords 
      - region_name_val -> With the region name your AWS account is operating in
      - aws_access_key_id_val -> With the id of the access key you created
      - aws_secret_access_key_val -> With the id of the secret access key you created
-* 
+* run the backend application using: ```python application.py```
 
 ### Hosting the Application on the Cloud (AWS)  
 ###### _Note: It is ***HIGHLY*** recommended to complete all previous steps prior to following the subsequent instructions._
