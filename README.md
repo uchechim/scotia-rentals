@@ -28,7 +28,7 @@ The purpose for this application is to create a safe envorionment for landlords 
    - S3
      
 * On your AWS account, create instances using the following services: VPC, EC2, RDS (Aurora), S3, AWS Backup
-* Note: The front-end may require more compute power than the minimal settings provided on AWS.
+###### Note: The front-end may require more compute power than the minimal settings provided for a typical EC2 instance on AWS.
 * For the VPC, configure security groups to allow the correct inbound/outbound connections (for simplicity add inbound/outbound anywhere @0.0.0.0).
 
 #### Frontend Setup
