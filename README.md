@@ -28,7 +28,7 @@ The purpose for this application is to create a safe envorionment for landlords 
    - EC2
    - Secrets Manager
    - AWS Backup
-   - AWS RDS (Aurora)
+   - AWS RDS (SQL)
    - S3
      
 * On your AWS account, create instances of the following services: VPC, EC2, RDS (Aurora MySQL Compatible), S3, AWS Backup 
