@@ -65,7 +65,35 @@ const Header = () => {
   };
 
   const handleLogout = () => {
+    //dispatch signout action
     dispatch(signout());
+
+    //dispatch property reset state action
+
+    //clear local, service worker and session caches storages to prevent any caching issues (such as displaying images from previously cached sessions)
+    //props to chatGPT
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // Clear cache storage
+    if ('caches' in window) {
+      caches.keys().then((names) => {
+        names.forEach((name) => {
+          caches.delete(name);
+        });
+      });
+    }
+
+    // Clear service worker cache
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+
     navigate('/signin');
   };
 

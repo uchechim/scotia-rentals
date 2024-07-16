@@ -8,11 +8,12 @@ import { styled } from '@mui/material/styles';
 import { RadioGroup, Radio, FormControlLabel } from '@mui/material';
 import { useState } from 'react';
 import { addListing } from '../../../Controllers/Requests/dbRequests';
-import AWS from 'aws-sdk';
 import { useDispatch } from 'react-redux';
-import { getListings } from '../../../Controllers/Requests/dbRequests';
 import { fetchListings } from '../../../Controllers/Redux/listingsSlice';
-import { useNavigate } from 'react-router-dom';
+
+//import { useNavigate } from 'react-router-dom';
+//import AWS from 'aws-sdk';
+//import { getListings } from '../../../Controllers/Requests/dbRequests';
 
 window.Buffer = window.Buffer || require('buffer').Buffer;
 
@@ -47,7 +48,7 @@ const AddListingModal = ({ open, handleClose }) => {
   const [listingLocation, setListingLocation] = useState('Halifax');
   const [listingImage, setListingImage] = useState(null);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const handleChange = (event) => {
     setListingLocation(event.target.value);
@@ -64,11 +65,9 @@ const AddListingModal = ({ open, handleClose }) => {
     const AWS = require('aws-sdk');
 
     AWS.config.update({
-      accessKeyId: 'ASIA47CRZQGRRSEDBOGB',
-      secretAccessKey: 'jlJarjUZ5kMbMrzh7615RvXv+twfMxxyGE8KsF7J',
+      accessKeyId: 'AKIAU6GDVWXLHXJL3MHD',
+      secretAccessKey: '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',
       region: 'us-east-1',
-      sessionToken:
-        'IQoJb3JpZ2luX2VjEMn//////////wEaCXVzLXdlc3QtMiJHMEUCIG6Ceh/f2wNoKDrpONqqwAXrmyE9XygjsYHc0lfKAKa8AiEAv7AhYDEeYssKTEg5xbIGkQx+vp4Zq8nsluOdjzpneIIqsgII8v//////////ARAAGgw4OTEzNzcyNTQ4MTkiDE3dRF7PCrRa9+wphCqGAsZECC2JWsYzKXxT7H22fvJTqKN20DXO7aApRtTMf+5Ka1FqjFYhVjR48B7TMRetzCjTnBo8UOV03SCWXvYs/rdu9KqKL2wJ9ngB5YcczlEusaLGYHjNXdc16C6olqbZccmvq7WeDlWlU0CQWOpIHDXuJm06ugQia3x01gTQ6g8K8WkGP9LyWfnMw0KnMwU9DVKcUxGbHHjKSun8uiA0OdwOTZNpSvSd03oOYPIN/Mwcl9PIyPsKK8vNxHTi+deChltPtPo8FybsJIt1E6MmYzJ9Le/G/ZMvkUs0zoY0Xm4OpowUxV3ClUsbJMMcrF3y1y1lJOHMu8wWtFf/qX0dKsJN5RDw1LcwxLnQsAY6nQGWCh4E5n+mmRbhVCLJIbqaCbsjoQ8ILvNgQlmsiuuRwX6bQXnwLnwk6sRvX1Oqvy/ssMVTSZZzuh3c/gVjsQJxn4GH35t+jAuXEAevKLb3KseAY8BPUdOZdzmeX8qjYIFdbXnet6sK0jbtrxGtw1TIZpbtlZ+1Av6+5c5t/1i6HppAyME0sPvpiT7msOhTkU/OvNO8bltcUnnJbOk/',
     });
 
     const s3 = new AWS.S3({
@@ -114,7 +113,6 @@ const AddListingModal = ({ open, handleClose }) => {
     addListing(listing_data).then((response) => {
       //response == listing_id
       uploadFile(event, response);
-
       dispatch(fetchListings());
     });
   };
@@ -209,6 +207,7 @@ const AddListingModal = ({ open, handleClose }) => {
               onChange={handleFileChange}
             />
           </UploadButton>
+
           <SubmitButton
             fullWidth
             variant="contained"

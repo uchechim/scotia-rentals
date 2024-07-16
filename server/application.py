@@ -14,23 +14,26 @@ CORS(application)
 
 #define sql connection with AWS RDS -> MIGHT NEED TO REFACTOR AFTER APPLYING VPC & EC2 E.T.C
 
-db_host = 'scotia-rentals-db.cluster-cdooy6ksoma9.us-east-1.rds.amazonaws.com'
+db_host = 'scotia-rental-db.claumo22iofg.us-east-1.rds.amazonaws.com'
 db_port = 3306
 db_user = 'admin'
-db_password = 'admin123'
+db_password = 'Asdasdasd1!'
 db_name = 'scotiaRentalDB'
 
 db_conn = pymysql.connect(host=db_host, port=db_port, user=db_user, password=db_password, db=db_name)
 unique_user_ids = set()
 
-aws_access_key_id_val ='ASIA47CRZQGRRSEDBOGB'
+aws_access_key_id_val ='AKIAU6GDVWXLHXJL3MHD'
 region_name_val='us-east-1'
-aws_secret_access_key_val = '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'
-aws_session_token_val =''
+aws_secret_access_key_val = 'im3Eu+QT3bxAVII6jyupR7hLK6jqvbjzHJJtPPVE'
+aws_session_token_val= ''
+
 
 s3 = boto3.client('s3', aws_access_key_id=aws_access_key_id_val, aws_secret_access_key=aws_secret_access_key_val, aws_session_token=aws_session_token_val, region_name=region_name_val)
 
 aws_secrets_client = boto3.client('secretsmanager', aws_access_key_id=aws_access_key_id_val, aws_secret_access_key=aws_secret_access_key_val, aws_session_token=aws_session_token_val, region_name=region_name_val)
+
+
 
                                                             #******backend routes******
 @application.route("/signin", methods=["POST"])
@@ -108,7 +111,7 @@ def signup():
     
     cur.execute("SELECT * FROM USER")
     query_details = cur.fetchall()
-
+    
     for det in query_details:
         if det[1] == email:
             return make_response({'message': "User exists already"}, 400)
@@ -193,12 +196,15 @@ def getListings():
         #print(listing_data)
         
         #if we have things(content) in our bucket object append their url's to the image_urls array 
-        if 'Contents' in bucket_objects:        
+        if 'Contents' in bucket_objects:
+            print(listing_data)        
             return make_response({'message': "Success getting listings", 'listings':listing_data, 'image_sources': bucket_objects['Contents']}, 200)
         else:
+            print("Failed to fetch S3 bucket objects")
             return make_response({'message': "Failed to fetch S3 bucket objects"}, 500)
                 
     except:
+        print("Failed to get listings")
         return make_response({'message': "Failed to get listings"}, 500)
     
 
@@ -287,7 +293,6 @@ def getFavoritesListings():
     except:
         return make_response({'message': "Failed to get listings"}, 500)
     
-
 
 if __name__ == "__main__":
     application.run(port='8080', debug=True)

@@ -1,19 +1,34 @@
 import { useEffect, useState } from 'react';
 import { Button, Grid } from '@material-ui/core';
 import Header from '../../Components/Renter/Header';
-import AddListingsModal from '../../Components/Modals/AddListingModal';
-import { useSelector } from 'react-redux';
+//import AddListingsModal from '../../Components/Modals/AddListingModal';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchListings } from '../../../Controllers/Redux/listingsSlice';
+
 import RenterListingCard from '../../Components/Renter/RenterListingCard';
 const MyListings = () => {
-  const [landLordListingData, setLandLordListingData] = useState([]);
   //What needs to be done here , is to use a useSelector to access the state of listings within the application, also need to modify code below to reflect that change.
+
+  /* 
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
-  const propertyListings = useSelector((state) => state.propertyListings);
+  */
 
+  const [landLordListingData, setLandLordListingData] = useState([]);
+  const propertyListings = useSelector(
+    (state) => state.propertyListings.propertyListings
+  );
+  const dispatch = useDispatch();
+
+  //Fetch the most recent listings data
   useEffect(() => {
-    setLandLordListingData(propertyListings.propertyListings);
+    dispatch(fetchListings());
+  }, [dispatch]);
+
+  //update local state (redux store) with the most recent data fetched whenever data(property listings) changes
+  useEffect(() => {
+    setLandLordListingData(propertyListings);
   }, [propertyListings]);
 
   return (
