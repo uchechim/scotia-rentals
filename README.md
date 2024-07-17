@@ -1,6 +1,6 @@
 # Scotia Rentals
 
-The purpose for this application is to create a safe envorionment for landlords and renters to interact with eachother. By providing discreet user work flows, scotia rentals aims to provide a flawless user experience that accomodates all parties to their maximum potential.
+The purpose of this application is to create a safe envorionment for landlords and renters to interact with each other. By providing discreet user work flows, scotia rentals aims to provide a flawless user experience that accomodates all parties to their maximum potential.
 
 ## Description
 
