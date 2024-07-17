@@ -6,7 +6,7 @@ updates:
     schedule:
       interval: 'daily'
     commit-message:
-      prefix: 'frontend dependabot commit'
+      prefix: 'front-end dependabot commit'
     open-pull-requests-limit: 5
     assignees:
       - 'uchechim'
@@ -21,7 +21,7 @@ updates:
     schedule:
       interval: 'daily'
     commit-message:
-      prefix: 'backend dependabot commit'
+      prefix: 'back-end dependabot commit'
     open-pull-requests-limit: 5
     assignees:
       - 'uchechim'
