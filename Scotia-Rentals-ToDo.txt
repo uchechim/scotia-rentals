@@ -1,11 +1,18 @@
-This file holds all bugs that I notice while developing the application.
+#### This file holds all bugs that I notice while developing the application.
 
-1 - Refactor backend to be modular (follow some form of design pattern for modern flask bakend applications)
+1 - Refactor backend to be modular (follow some form of design pattern for modern flask backend applications) - TODO
 
-2 - Update listings workflow to provide discreet renter-side & landlord-side listings. I.E -> Landlord should only be able to view their own listings
+2 - Update listings workflow to provide discreet renter-side & landlord-side listings. I.E -> Landlord should only be able to view their own listings - TODO
 
-3 - Find a way to abstract/hide all secrets from application both front-end and back-end. I.E AWS Access keys, passwords e.t.c in code should not be visible in the public git repository.
+3 - Find a way to abstract/hide all secrets from application both front-end and back-end. I.E AWS Access keys, passwords e.t.c in code should not be visible in the public git repository. - TODO
 
-4 - Fix rendering bug -> UI doesn't update properly whenever logging in. Must refresh to see the components correctly i.e Button styles e.t.c
+4 - Fix rendering bug -> UI doesn't update properly whenever logging in. Must refresh to see the components correctly i.e Button styles e.t.c - TODO
 
-5 - Fix bug with listings -> currently when listings are uploaded from the landlord side, the correct data isn't always displayed i.e (New Listing 2 vs New Listing from Landlord_1). Look into this.
+5 - Fix bug with listings -> currently when listings are uploaded from the landlord side, the correct data isn't always displayed i.e (New Listing 2 vs New Listing from Landlord_1). Look into this. - TODO
+
+
+#### Future Plans
+
+1 - Revamp Frontend
+2 - Rebrand Application (new name, new look, e.t.c)
+3 - Integrate some ML/AI features to further modernize the application
