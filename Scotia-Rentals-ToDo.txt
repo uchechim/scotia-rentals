@@ -8,4 +8,4 @@ This file holds all bugs that I notice while developing the application.
 
 4 - Fix rendering bug -> UI doesn't update properly whenever logging in. Must refresh to see the components correctly i.e Button styles e.t.c
 
-5 - Fix bug with listings -> currently when listings are uploaded from the landlord side, the correct data isn't always displayed i.e (New Listing 2 vs New Listing from Landlord_1). Look into this
+5 - Fix bug with listings -> currently when listings are uploaded from the landlord side, the correct data isn't always displayed i.e (New Listing 2 vs New Listing from Landlord_1). Look into this.
