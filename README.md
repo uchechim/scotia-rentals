@@ -71,7 +71,8 @@ The purpose for this application is to create a safe envorionment for landlords 
 
 #### Frontend Setup
 
-- To configure the front-end using EC2 + NGINX please refer to my video (https://www.youtube.com/watch?v=f8IwHnqSl2U) -> Time Stamp: 8:41 - 14:31
+- To configure the front-end using EC2 + NGINX please refer to my video (https://www.youtube.com/watch?v=f8IwHnqSl2U)
+- Time Stamp: 8:41 - 14:31
 
 #### Backend Setup
 
@@ -97,12 +98,13 @@ Uchenna Chima
   - Working on improvements with Davide Pollicino - https://github.com/omonimus1
   - New Features/Improvements
     - Added a detailed README
-    - TODO: Added Dependency management with Dependabot
+    - TODO: Added Dependency Management with Dependabot
+    - TODO: Added Linter (flake/pylint)
     - TODO: Integrated a Payment gateway with (Square/Stripe)
     - TODO: Containerized Application using Docker
     - TODO: Added Automated tests (e2e & e2n (end-to-end, end-to-node))
     - TODO: Integrate CI/CD Pipeline with unit tests
-    - TODO: Added Linter (flake/pylint)
 
 - 0.1
+
   - Initial Release (As published on YouTube: https://www.youtube.com/watch?v=f8IwHnqSl2U)

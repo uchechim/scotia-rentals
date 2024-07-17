@@ -2,7 +2,10 @@ import axios from 'axios';
 
 export const signUp = async (userData) => {
   const response = await axios
-    .post('http://127.0.0.1:8080/signup', userData)
+    .post(
+      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/signup',
+      userData
+    )
     .then((response) => {
       if (response.status === 200) {
         alert('successfully signed up user');
@@ -18,7 +21,10 @@ export const signUp = async (userData) => {
 
 export const signIn = async (userData) => {
   const response = await axios
-    .post('http://127.0.0.1:8080/signin', userData)
+    .post(
+      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/signin',
+      userData
+    )
     .then((response) => {
       return response;
     })
@@ -31,7 +37,10 @@ export const signIn = async (userData) => {
 
 export const addListing = async (userData) => {
   const response = await axios
-    .post('http://127.0.0.1:8080/add-listing', userData)
+    .post(
+      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/add-listing',
+      userData
+    )
     .then((response) => {
       const listing_id = response.data.listing[0];
       return listing_id;
@@ -45,7 +54,9 @@ export const addListing = async (userData) => {
 
 export const getListings = async () => {
   const data = [];
-  const response = await axios.get('http://127.0.0.1:8080/get-listings');
+  const response = await axios.get(
+    'http://scotia-rentals.us-east-1.elasticbeanstalk.com/get-listings'
+  );
 
   const listings = response.data.listings;
   const listings_imgs = response.data.image_sources;

@@ -1,0 +1,31 @@
+version: 2
+updates:
+  # NPM Configuration for the frontend
+  - package-ecosystem: 'npm'
+    directory: '/client'
+    schedule:
+      interval: 'daily'
+    commit-message:
+      prefix: 'frontend dependabot commit'
+    open-pull-requests-limit: 5
+    assignees:
+      - 'uchechim'
+    reviewers:
+      - 'uchechim'
+    labels:
+      - 'frontend dependencies'
+
+  # PIP Configuration for the backend
+  - package-ecosystem: 'pip'
+    directory: '/server'
+    schedule:
+      interval: 'daily'
+    commit-message:
+      prefix: 'backend dependabot commit'
+    open-pull-requests-limit: 5
+    assignees:
+      - 'uchechim'
+    reviewers:
+      - 'uchechim'
+    labels:
+      - 'backend dependencies'
