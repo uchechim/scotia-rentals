@@ -98,7 +98,7 @@ Uchenna Chima
   - Working on improvements with Davide Pollicino - https://github.com/omonimus1
   - New Features/Improvements
     - Added a detailed README
-    - TODO: Added Dependency Management with Dependabot
+    - Added Dependency Management with Dependabot
     - TODO: Added Linter (flake/pylint)
     - TODO: Integrated a Payment gateway with (Square/Stripe)
     - TODO: Containerized Application using Docker
