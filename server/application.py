@@ -196,8 +196,7 @@ def getListings():
         #print(listing_data)
         
         #if we have things(content) in our bucket object append their url's to the image_urls array 
-        if 'Contents' in bucket_objects:
-            print(listing_data)        
+        if 'Contents' in bucket_objects:      
             return make_response({'message': "Success getting listings", 'listings':listing_data, 'image_sources': bucket_objects['Contents']}, 200)
         else:
             print("Failed to fetch S3 bucket objects")

@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { addListing } from '../../../Controllers/Requests/dbRequests';
 import { useDispatch } from 'react-redux';
 import { fetchListings } from '../../../Controllers/Redux/listingsSlice';
+import { useNavigate } from 'react-router-dom';
 
 //import { useNavigate } from 'react-router-dom';
 //import AWS from 'aws-sdk';
@@ -48,7 +49,7 @@ const AddListingModal = ({ open, handleClose }) => {
   const [listingLocation, setListingLocation] = useState('Halifax');
   const [listingImage, setListingImage] = useState(null);
   const dispatch = useDispatch();
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setListingLocation(event.target.value);
@@ -114,6 +115,7 @@ const AddListingModal = ({ open, handleClose }) => {
       //response == listing_id
       uploadFile(event, response);
       dispatch(fetchListings());
+      navigate('/mylistings');
     });
   };
   return (
