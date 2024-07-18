@@ -8,7 +8,7 @@ The purpose of this application is to create a safe envorionment for landlords a
 
 ## Getting Started
 
-### Dependencies
+### High-Level Software Dependencies
 
 - Working IDE - Preferably VSCode
 - Unix or Windows-based Operating System.
@@ -99,11 +99,11 @@ Uchenna Chima
   - New Features/Improvements
     - Added a detailed README
     - Added Dependency Management with Dependabot.
-    - TODO: Added Linter (flake/pylint)
+    - Added Linters (ESLint & Flake8)
     - TODO: Integrated a Payment gateway with (Square/Stripe)
-    - TODO: Containerized Application using Docker
     - TODO: Added Automated tests (e2e & e2n (end-to-end, end-to-node))
     - TODO: Integrate CI/CD Pipeline with unit tests
+    - TODO: Containerized Application using Docker
 
 - 0.1
 
