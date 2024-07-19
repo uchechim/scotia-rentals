@@ -18,6 +18,8 @@
 
 9 - Fix ESLint Linting issues (first extend linter to be compatible with redux and add custom rules pertaining to the unused imports)
 
+10 - Add automatic logout/timeout after X hours
+
 
 #### Future Plans
 
