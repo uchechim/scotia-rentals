@@ -12,7 +12,7 @@ import Logo from '../../Components/Images/logo_transparent.png';
 import validator from 'validator';
 import { RadioGroup, Radio, FormControlLabel, FormLabel } from '@mui/material';
 import { useState } from 'react';
-import { signUp } from '../../../Controllers/Requests/dbRequests';
+import { signUp } from '../../../Models/Requests/dbRequests';
 
 const Signup = () => {
   const [accountType, setAccountType] = useState('Renter');

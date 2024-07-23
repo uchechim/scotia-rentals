@@ -1,4 +1,4 @@
-from flask import Flask, make_response
+from flask import Flask, make_response, jsonify
 from flask_cors import CORS
 from flask import request  
 import pymysql
@@ -7,6 +7,8 @@ import boto3
 import logging
 import hashlib
 import json
+from square.client import Client
+
 
 #define flask app and enable cors (cross-browser requests)
 application = Flask(__name__)
@@ -23,11 +25,13 @@ db_name = 'scotiaRentalDB'
 db_conn = pymysql.connect(host=db_host, port=db_port, user=db_user, password=db_password, db=db_name)
 unique_user_ids = set()
 
-aws_access_key_id_val ='AKIAU6GDVWXLHXJL3MHD'
+aws_access_key_id_val ='AKIAU6GDVWXLBIY6YJVU'
 region_name_val='us-east-1'
-aws_secret_access_key_val = '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'
+aws_secret_access_key_val = 'Y4uDP3gDfFX6WVYcwAMKuTq812ZrZqk549J5lIK0'
 aws_session_token_val= ''
 
+access_token = "EAAAl2qpBqc0Z0NpqpvpwHhdLZmAUxvwIntE_Vuxwn3xbWGbqeHCFLGPwWAw3oty" #applications access token
+square_client = Client(access_token=access_token, environment='sandbox')
 
 s3 = boto3.client('s3', aws_access_key_id=aws_access_key_id_val, aws_secret_access_key=aws_secret_access_key_val, aws_session_token=aws_session_token_val, region_name=region_name_val)
 
@@ -291,7 +295,48 @@ def getFavoritesListings():
                 
     except:
         return make_response({'message': "Failed to get listings"}, 500)
+
+
+#this route handles processing payments via SQUARE
+@application.route("/process-payment", methods=['POST'])
+def processPayment():
     
+    if request.content_type != 'application/json':
+        print(request.content_type)
+        return make_response({'message': 'Unsupported Media Type'},  415)
+    
+    create_payment_payload = {
+        "source_id": request.json['nonce'],
+
+        #in production would need to modify this to get realtime data from the front-end
+        "amount_money": {
+            "amount": 1000000,
+            "currency": "USD"
+        },
+        "idempotency_key": request.json['idempotency_key']
+    }
+
+    #in the future can create a custom method to list payments as per user's unique nonce. this is just a POC.
+    list_payments_payload = {
+        "sort_order": 'DESC',
+        "location_id": 'L5S30KEFRY41W',
+        "last_4": '0009',
+        "card_brand": 'AMEX',
+        "limit": 10,
+    }
+
+    create_payment = square_client.payments.create_payment(create_payment_payload)
+    list_payments = square_client.payments.list_payments(list_payments_payload)
+    
+    
+    if create_payment.is_success():
+        print(list_payments)
+        return make_response({'message': "Success Creating Payment", "create_payment_json_body": json.dumps(create_payment.body), "list_payments_json_body": json.dumps(list_payments.body),}, 200)
+    elif create_payment.is_error():
+        return make_response({'message': "Error Creating Payment", "JSON_BODY": json.dumps(create_payment.errors)}, 400)
+
+    
+
 
 if __name__ == "__main__":
     application.run(port='8080', debug=True)

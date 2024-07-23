@@ -14,7 +14,7 @@ import './Styles/Signin.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signin } from '../../../Controllers/Redux/authSlice';
-import { signIn } from '../../../Controllers/Requests/dbRequests';
+import { signIn } from '../../../Models/Requests/dbRequests';
 
 const Signin = () => {
   //AXIOS POST, REDUX UPDATE STATE, JWT TOKEN, FORM VALIDATION E.T.C.

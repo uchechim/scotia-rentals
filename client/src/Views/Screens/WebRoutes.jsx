@@ -9,6 +9,8 @@ import {
   ViewListing,
 } from '../Screens';
 
+import { SquarePaymentForm } from '../Screens';
+
 //https://www.w3schools.com/react/react_router.asp
 const WebRoutes = () => {
   return (
@@ -21,6 +23,7 @@ const WebRoutes = () => {
         <Route path="/mylistings" element={<MyListings />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/viewlisting" element={<ViewListing />} />
+        <Route path="/square-payment-form" element={<SquarePaymentForm />} />
       </Routes>
     </BrowserRouter>
   );

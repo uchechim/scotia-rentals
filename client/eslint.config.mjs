@@ -1,6 +1,9 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
-import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
+import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import pluginImport from 'eslint-plugin-import';
 
 //Configuraton for all Javascript
 export default [

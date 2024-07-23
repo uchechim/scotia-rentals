@@ -100,9 +100,11 @@ Uchenna Chima
     - Added a detailed README
     - Added Dependency Management with Dependabot.
     - Added Linters (ESLint & Flake8)
-    - TODO: Integrated a Payment gateway with (Square/Stripe)
-    - TODO: Added Automated tests (e2e & e2n (end-to-end, end-to-node))
-    - TODO: Integrate CI/CD Pipeline with unit tests
+    - Integrated a P.O.C Payment feature with Square
+    - TODO: Refactored Application Backend To Be Modular and Utilize MVC
+    - TODO: Added Automated tests (e2e & e2n (end-to-end, end-to-node)) using Microsoft Playwright Framework
+    - TODO: Added unit tests using PyTest
+    - TODO: Integrate CI/CD Pipeline
     - TODO: Containerized Application using Docker
 
 - 0.1

@@ -14,11 +14,13 @@
 
 7 - Fix conflicting dependency issues on Frontend (i.e npm install requires --force tag) - TODO
 
-8 - Fix Flake8 Linting issues
+8 - Fix Flake8 Linting issues - TODO
 
-9 - Fix ESLint Linting issues (first extend linter to be compatible with redux and add custom rules pertaining to the unused imports)
+9 - Fix ESLint Linting issues (first extend linter to be compatible with redux and add custom rules pertaining to the unused imports) - TODO
 
-10 - Add automatic logout/timeout after X hours
+10 - Add automatic logout/timeout after X hours - TODO
+
+11 - Refactor REACT Model, Views, Controllers file/folder structure. Carefully Look into if it's implemented correctly (especially models & controllers). - TODO
 
 
 #### Future Plans

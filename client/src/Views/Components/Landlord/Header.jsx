@@ -70,35 +70,17 @@ const Header = () => {
 
     //dispatch property reset state action
 
-    //clear local, service worker and session caches storages to prevent any caching issues (such as displaying images from previously cached sessions)
+    //clear local, session storages(cache)  to prevent any caching issues (such as displaying images from previously cached sessions)
     //props to chatGPT
 
     localStorage.clear();
     sessionStorage.clear();
 
-    // Clear cache storage
-    if ('caches' in window) {
-      caches.keys().then((names) => {
-        names.forEach((name) => {
-          caches.delete(name);
-        });
-      });
-    }
-
-    // Clear service worker cache
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then((registrations) => {
-        for (let registration of registrations) {
-          registration.unregister();
-        }
-      });
-    }
-
     navigate('/signin');
   };
 
-  const handleMyListings = () => {
-    navigate('/mylistings');
+  const handleMakePayment = () => {
+    navigate('/square-payment-form');
   };
 
   return (
@@ -135,8 +117,9 @@ const Header = () => {
                     </ListItem>
                     <ListItem button>
                       <ListItemText
-                        primary="My Listings"
+                        primary="Square Payment"
                         style={{ color: 'black', fontWeight: 800 }}
+                        onClick={handleMakePayment}
                       />
                     </ListItem>
                     <ListItem button>
@@ -167,14 +150,14 @@ const Header = () => {
                 >
                   Add Listing
                 </Button>
-                {/* 
+
                 <Button
                   style={{ color: 'black', fontWeight: 800 }}
-                  onClick={handleMyListings}
+                  onClick={handleMakePayment}
                 >
-                  My Listings
+                  Square Payment
                 </Button>
-                */}
+
                 <AddListingModal
                   open={modalOpen}
                   handleClose={handleModalClose}

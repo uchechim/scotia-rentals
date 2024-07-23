@@ -180,3 +180,35 @@ export const getFavoritesListings = async () => {
 
   return data;
 };
+
+export const processPayment = async (nonce, amount) => {
+  const req_body = JSON.stringify({
+    nonce: nonce,
+    amount_money: {
+      //can replace this with real amount later down the line
+      amount: amount,
+      currency: 'USD',
+    },
+    idempotency_key: `idempotency-key-${Date.now()}`,
+  });
+
+  try {
+    const create_payment = await axios.post(
+      'https://scotia-rentals-listings-bucket.s3.amazonaws.com/process-payment',
+      req_body,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    if (create_payment.error) {
+      console.log('Error occured when creating payment!', create_payment.error);
+    } else {
+      console.log('Payment successful!');
+    }
+  } catch (error) {
+    console.log('Failed to create_payment', error);
+  }
+};

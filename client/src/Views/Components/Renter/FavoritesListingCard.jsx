@@ -5,7 +5,7 @@ import {
   CardActions,
   Button,
 } from '@mui/material';
-import { deleteListingFromFavorites } from '../../../Controllers/Requests/dbRequests';
+import { deleteListingFromFavorites } from '../../../Models/Requests/dbRequests';
 import { useNavigate } from 'react-router-dom';
 import { fetchFavoritesListings } from '../../../Controllers/Redux/favoritesListingsSlice';
 import { useDispatch } from 'react-redux';

@@ -7,3 +7,5 @@ export { default as MyListings } from './Landlord/MyListings';
 export { default as Listings } from './Renter/Listings';
 export { default as Favorites } from './Renter/Favorites';
 export { default as ViewListing } from './Renter/ViewListing';
+
+export { default as SquarePaymentForm } from './Square/SquarePaymentForm';

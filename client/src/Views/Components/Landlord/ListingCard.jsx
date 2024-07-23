@@ -5,7 +5,7 @@ import {
   CardActions,
   Button,
 } from '@mui/material';
-import { deleteListing } from '../../../Controllers/Requests/dbRequests';
+import { deleteListing } from '../../../Models/Requests/dbRequests';
 import { useNavigate } from 'react-router-dom';
 import { fetchListings } from '../../../Controllers/Redux/listingsSlice';
 import { useDispatch } from 'react-redux';

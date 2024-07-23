@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import { RadioGroup, Radio, FormControlLabel } from '@mui/material';
 import { useState } from 'react';
-import { addListing } from '../../../Controllers/Requests/dbRequests';
+import { addListing } from '../../../Models/Requests/dbRequests';
 import { useDispatch } from 'react-redux';
 import { fetchListings } from '../../../Controllers/Redux/listingsSlice';
 import { useNavigate } from 'react-router-dom';
