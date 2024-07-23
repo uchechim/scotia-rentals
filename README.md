@@ -101,7 +101,7 @@ Uchenna Chima
     - Added Dependency Management with Dependabot.
     - Added Linters (ESLint & Flake8)
     - Integrated a P.O.C Payment feature with Square
-    - TODO: Modularized The Application's Backend By Utilizing The MVC Design Pattern
+    - TODO: Modularized The Application's Backend To Foster Maintainability
     - TODO: Added Automated tests (e2e & e2n (end-to-end, end-to-node)) using Microsoft Playwright Framework
     - TODO: Added unit tests using PyTest
     - TODO: Integrate CI/CD Pipeline
