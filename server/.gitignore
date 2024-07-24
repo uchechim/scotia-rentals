@@ -1,0 +1,2 @@
+#Ignore env file that holds environmental variables for my backend
+.env

@@ -2,10 +2,7 @@ import axios from 'axios';
 
 export const signUp = async (userData) => {
   const response = await axios
-    .post(
-      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/signup',
-      userData
-    )
+    .post('http://127.0.0.1:8080/signup', userData)
     .then((response) => {
       if (response.status === 200) {
         alert('successfully signed up user');
@@ -21,10 +18,7 @@ export const signUp = async (userData) => {
 
 export const signIn = async (userData) => {
   const response = await axios
-    .post(
-      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/signin',
-      userData
-    )
+    .post('http://127.0.0.1:8080/signin', userData)
     .then((response) => {
       return response;
     })

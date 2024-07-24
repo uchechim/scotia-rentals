@@ -44,7 +44,8 @@ const Signin = () => {
 
       if (res.status === 200) {
         alert('success');
-        console.log(res.data.user.accountType, ' res data');
+
+        console.log(res.data.user, ' res data');
         dispatch(signin(res.data));
         res.data.user.accountType === 'renter'
           ? navigate('/listings')

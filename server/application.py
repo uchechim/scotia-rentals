@@ -1,4 +1,4 @@
-from flask import Flask, make_response, jsonify
+from flask import Flask, make_response
 from flask_cors import CORS
 from flask import request  
 import pymysql
@@ -9,7 +9,7 @@ import hashlib
 import json
 from square.client import Client
 
-
+'''
 #define flask app and enable cors (cross-browser requests)
 application = Flask(__name__)
 CORS(application)
@@ -139,6 +139,9 @@ def signup():
     db_conn.commit()
     #db_conn.close()
     return make_response({'message': "Success"}, 200)
+
+    
+'''
 
 
 #this route handles adding a new listing to the database in addition to adding it's corresponding image to an S3 bucket. 
@@ -335,8 +338,10 @@ def processPayment():
     elif create_payment.is_error():
         return make_response({'message': "Error Creating Payment", "JSON_BODY": json.dumps(create_payment.errors)}, 400)
 
-    
 
+from flask_app import create_app
+
+application = create_app()
 
 if __name__ == "__main__":
     application.run(port='8080', debug=True)
