@@ -1,6 +1,6 @@
 import os
 
-#Config class to access all environmental variables (abstracted from public) for this project
+# Config class to access all environmental variables (abstracted from public) for this project
 class Config:
     DB_HOST = os.getenv('DB_HOST')
     DB_PORT = int(os.getenv('DB_PORT',3306)) #default to 3306 if port for some reason is missing in env
