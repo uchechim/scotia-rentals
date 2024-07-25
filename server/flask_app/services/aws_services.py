@@ -4,7 +4,6 @@ import json
 #as the application scales, i might utilize different config files (developmentConfig, testingConfig e.t.c) 
 #current_app just ensures that I am using the config defined on creating the application
 from flask import make_response 
-import os
 from config import Config
 
 

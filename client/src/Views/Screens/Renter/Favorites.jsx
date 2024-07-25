@@ -15,6 +15,9 @@ const Favorites = () => {
 
   useEffect(() => {
     dispatch(fetchFavoritesListings());
+  }, [dispatch]);
+
+  useEffect(() => {
     setFavoritesListingsData(favoritesListings.favoritesListings);
   }, [favoritesListingsData]);
 

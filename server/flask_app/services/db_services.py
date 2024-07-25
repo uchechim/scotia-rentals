@@ -1,5 +1,4 @@
 import pymysql
-import os
 from config import Config
 
 def connect_to_aws_db():

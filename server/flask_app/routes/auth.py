@@ -18,7 +18,7 @@ def signin():
     aws_user_secret_payload = get_user_auth_secret(email)
 
     #check if passwords match or not, if they dont, return 400
-    if not aws_user_secret_payload or aws_user_secret_payload.get('password') != encrypted_user_password:
+    if not aws_user_secret_payload or aws_user_secret_payload['password'] != encrypted_user_password:
          return make_response({'message': "Invalid Credentials"}, 400)
 
     #if passwords match, sign in user and return user data to front-end , return 200

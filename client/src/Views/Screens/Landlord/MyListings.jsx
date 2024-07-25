@@ -27,7 +27,6 @@ const MyListings = () => {
       <Grid container justifyContent="center" spacing={1}>
         {landLordListingData.length > 0 ? (
           landLordListingData.map((listingData, index) => {
-            console.log(listingData);
             return (
               <Grid Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                 <ListingCard

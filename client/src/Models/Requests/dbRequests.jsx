@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+//http://scotia-rentals.us-east-1.elasticbeanstalk.com/
 export const signUp = async (userData) => {
   const response = await axios
     .post('http://127.0.0.1:8080/signup', userData)
@@ -31,10 +31,7 @@ export const signIn = async (userData) => {
 
 export const addListing = async (userData) => {
   const response = await axios
-    .post(
-      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/add-listing',
-      userData
-    )
+    .post('http://127.0.0.1:8080/add-listing', userData)
     .then((response) => {
       const listing_id = response.data.listing[0];
       return listing_id;
@@ -48,9 +45,7 @@ export const addListing = async (userData) => {
 
 export const getListings = async () => {
   const data = [];
-  const response = await axios.get(
-    'http://scotia-rentals.us-east-1.elasticbeanstalk.com/get-listings'
-  );
+  const response = await axios.get('http://127.0.0.1:8080/get-listings');
 
   const listings = response.data.listings;
   const listings_imgs = response.data.image_sources;
@@ -88,7 +83,7 @@ export const getListings = async () => {
 export const deleteListing = async (listingId) => {
   try {
     const response = await axios.delete(
-      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/delete-listing',
+      'http://127.0.0.1:8080/delete-listing',
       {
         headers: {
           'Content-Type': 'application/json',
@@ -107,10 +102,7 @@ export const deleteListing = async (listingId) => {
 
 export const addListingToFavorites = async (listingData) => {
   const response = await axios
-    .post(
-      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/add-listing-to-favorites',
-      listingData
-    )
+    .post('http://127.0.0.1:8080/add-listing-to-favorites', listingData)
     .then((response) => {
       console.log(response);
     })
@@ -124,7 +116,7 @@ export const addListingToFavorites = async (listingData) => {
 export const deleteListingFromFavorites = async (listingId) => {
   try {
     const response = await axios.delete(
-      'http://scotia-rentals.us-east-1.elasticbeanstalk.com/delete-listing-from-favorites',
+      'http://127.0.0.1:8080/delete-listing-from-favorites',
       {
         headers: {
           'Content-Type': 'application/json',
@@ -144,7 +136,7 @@ export const deleteListingFromFavorites = async (listingId) => {
 export const getFavoritesListings = async () => {
   const data = [];
   const response = await axios.get(
-    'http://scotia-rentals.us-east-1.elasticbeanstalk.com/get-favorites-listings'
+    'http://127.0.0.1:8080/get-favorites-listings'
   );
 
   const favoriteListings = response.data.listings;
@@ -188,7 +180,7 @@ export const processPayment = async (nonce, amount) => {
 
   try {
     const create_payment = await axios.post(
-      'https://scotia-rentals-listings-bucket.s3.amazonaws.com/process-payment',
+      'http://127.0.0.1:8080/process-payment',
       req_body,
       {
         headers: {

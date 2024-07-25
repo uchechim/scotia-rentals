@@ -12,9 +12,9 @@ def hash_password(password):
     return encrypted_user_password
 
 
-
+#reference -> https://stackoverflow.com/questions/72926478/how-do-you-auto-generate-a-random-id-for-an-sqlite-database-table
 def generate_random_id():
-    return random.randint(10000000, 99999999)
+    return random.randint(10000000, 99999999)#generates random 8 digit number
 
 '''
 3 functions to be used in app later

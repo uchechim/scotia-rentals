@@ -66,8 +66,8 @@ const AddListingModal = ({ open, handleClose }) => {
     const AWS = require('aws-sdk');
 
     AWS.config.update({
-      accessKeyId: 'AKIAU6GDVWXLHXJL3MHD',
-      secretAccessKey: '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',
+      accessKeyId: 'AKIAU6GDVWXLBIY6YJVU',
+      secretAccessKey: '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',
       region: 'us-east-1',
     });
 

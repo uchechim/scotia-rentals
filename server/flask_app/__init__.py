@@ -2,7 +2,9 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_app.routes.auth import auth_blueprint
-#, listings_blueprint, favorites_blueprint, payments_blueprint
+from flask_app.routes.listings import listings_blueprint
+from flask_app.routes.favorites import favorites_blueprint
+from flask_app.routes.payments import payments_blueprint
 
 def create_app():
     application = Flask(__name__)
@@ -13,8 +15,8 @@ def create_app():
     #register api blueprints - this makes the application modular.
     #this way, as the application grows, I can easily separate the application's logic on the Flask Level
     application.register_blueprint(auth_blueprint)
-    #application.register_blueprint(listings_blueprint)
-    #application.register_blueprint(favorites_blueprint)
-    #application.register_blueprint(payments_blueprint)
+    application.register_blueprint(listings_blueprint)
+    application.register_blueprint(favorites_blueprint)
+    application.register_blueprint(payments_blueprint)
 
     return application

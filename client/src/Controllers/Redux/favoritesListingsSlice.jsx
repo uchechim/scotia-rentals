@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getListings } from '../../Models/Requests/dbRequests';
+import { getFavoritesListings } from '../../Models/Requests/dbRequests';
 
 const initialState = {
   favoritesListings: [],
