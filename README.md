@@ -7,8 +7,15 @@ The purpose of this application is to create a safe envorionment for landlords a
 "Scotia Rentals" is a full-stack web application that facilitates seamless interactions between landlords and renters, leveraging AWS cloud resources for improved scalability, reliability, and performance. The front end of this application is developed using React and the back end is developed using Flask/Python.
 
 ## UI Design (Version 0.1)
-Landing Page
-![Screenshot 2024-07-26 130516](https://github.com/user-attachments/assets/c518109c-f740-4d60-b72a-1191fb02e131)
+![Landing Page](https://github.com/user-attachments/assets/97ffb986-d2bc-47ab-aa76-01637032d751)
+![Sign up page](https://github.com/user-attachments/assets/faafd5aa-a7aa-45c4-a5dc-96b5c6269142)
+![Sign in page](https://github.com/user-attachments/assets/82340a82-1f83-4483-b60b-af8b76364f12)
+![add listing](https://github.com/user-attachments/assets/711aaa10-3692-4b8f-8f7d-5e564ebc67f4)
+![Landlord Listings](https://github.com/user-attachments/assets/6feb1127-6704-4c00-b99b-a634efbb0c81)
+![available listing renter](https://github.com/user-attachments/assets/a876a527-942a-48db-9179-22b2ba0cc3f1)
+![view Listing](https://github.com/user-attachments/assets/3cd11b17-b040-4dc8-ac43-1dac1a83ef4f)
+![favorites](https://github.com/user-attachments/assets/afba2709-1a2c-41ed-93f4-f0e08f861d08)
+
 
 
 
