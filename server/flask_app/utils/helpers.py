@@ -16,6 +16,11 @@ def hash_password(password):
 def generate_random_id():
     return random.randint(10000000, 99999999)#generates random 8 digit number
 
+
+#add functions from "usefulcmds.py file here"
+
+
+
 '''
 3 functions to be used in app later
 def format_response(message, status_code, data=None):
