@@ -8,19 +8,22 @@ The purpose of this application is to create a safe envorionment for landlords a
 
 ## UI Design (Version 0.1)
 
-# Landing Page
+### Landing Page
 ![Landing Page](https://github.com/user-attachments/assets/97ffb986-d2bc-47ab-aa76-01637032d751)
-
-Sign Up Page
+### Sign Up 
 ![Sign up page](https://github.com/user-attachments/assets/faafd5aa-a7aa-45c4-a5dc-96b5c6269142)
+### Sign In 
 ![Sign in page](https://github.com/user-attachments/assets/82340a82-1f83-4483-b60b-af8b76364f12)
+### Add Listing 
 ![add listing](https://github.com/user-attachments/assets/711aaa10-3692-4b8f-8f7d-5e564ebc67f4)
+### Landlord Listings
 ![Landlord Listings](https://github.com/user-attachments/assets/6feb1127-6704-4c00-b99b-a634efbb0c81)
+### Available Listings (Renter)
 ![available listing renter](https://github.com/user-attachments/assets/a876a527-942a-48db-9179-22b2ba0cc3f1)
+### View Listings (Renter)
 ![view Listing](https://github.com/user-attachments/assets/3cd11b17-b040-4dc8-ac43-1dac1a83ef4f)
+### Favorites (Renter)
 ![favorites](https://github.com/user-attachments/assets/afba2709-1a2c-41ed-93f4-f0e08f861d08)
-
-
 
 
 ## Getting Started
