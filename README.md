@@ -8,7 +8,7 @@ The purpose of this application is to create a safe envorionment for landlords a
 
 ## UI Design (Version 0.1)
 
-#Landing Page
+# Landing Page
 ![Landing Page](https://github.com/user-attachments/assets/97ffb986-d2bc-47ab-aa76-01637032d751)
 
 Sign Up Page
