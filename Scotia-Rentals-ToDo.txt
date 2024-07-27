@@ -26,6 +26,8 @@
 
 13 - Logged in user should be redirected to their respective homepages after navigating to another webpage and navigating back (sessions).
 
+14 - Signup/Signin with google.
+
 
 
 #### Future Plans
