@@ -22,7 +22,9 @@
 
 11 - Refactor REACT Model, Views, Controllers file/folder structure. Carefully Look into if it's implemented correctly (especially models & controllers). - TODO
 
-12 - Figure out why on login and page refres, the listings component doesnt trigger getListings() - TODO
+12 - Figure out why on login and page refresh, the listings component doesn't trigger getListings() - TODO
+
+13 - Logged in user should be redirected to their respective homepages after navigating to another webpage and navigating back (sessions).
 
 
 
