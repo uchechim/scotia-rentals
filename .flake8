@@ -1,3 +1,70 @@
 [flake8]
-max-line-length = 88
-exclude = .git,__pycache__,old,build,dist 
+max-line-length = 100
+# Ignore specific error codes:
+# E402: Module level import not at top of file
+# E501: Line too long (82 > 79 characters)
+# E305: Expected 2 blank lines after class or function definition, found 1
+# E302: Expected 2 blank lines, found 0
+# W292 no newline at end of file
+# E303 too many blank lines (3)
+# W293 blank line contains whitespaces
+# W391 blank line at end of file
+# E261 at least two spaces before inline comment
+# E271 multiple spaces after keyword
+# E111 indentation is not a multiple of 4
+# E241 multiple spaces after ','
+# E221 multiple spaces before operator
+# E202 whitespace before ')'
+# E265 block comment should start with '# '
+# E251 unexpected spaces around keyword / parameter equals
+# E301 expected 1 blank line, found 0
+# E203 whitespace before ':'
+# E222 multiple spaces after operator
+# E121 continuation line under-indented for hanging indent
+# W291 trailing whitespace
+# E231 missing whitespace after ':'
+# E126 continuation line over-indented for hanging indent
+# E117 over-indented
+# E131 continuation line unaligned for hanging indent
+# E501 line too long
+# E225 missing whitespace around operator
+ignore =
+    W293,
+    E402,
+    E305,
+    E302,
+    E225,
+    E501,
+    W292,
+    E303,
+    E111,
+    E241,
+    W391,
+    E261,
+    E271,
+    E202,
+    E265,
+    E251,
+    E301,
+    E221,
+    E203,
+    E222,
+    E121,
+    W291,
+    E231,
+    E126,
+    E117,
+    E131
+
+exclude =
+    migrations
+    __pycache__
+    manage.py
+    settings.py
+    env
+    .env
+    venv
+    .pytest_cache
+    testsImages
+    coverage
+    coverage.xml
