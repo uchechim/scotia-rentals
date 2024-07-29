@@ -12,7 +12,6 @@ payments_blueprint = Blueprint('payment', __name__)
 def processPayment():
     
     if request.content_type != 'application/json':
-        print(request.content_type)
         return make_response({'message': 'Unsupported Media Type'},  415)
     
     create_payment_payload = {

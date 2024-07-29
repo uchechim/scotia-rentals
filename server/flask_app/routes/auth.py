@@ -38,9 +38,9 @@ def signin():
         
         user = {
             'id':user_details[0], 
-            'firstName':user_details[1],
-            'lastName':user_details[2],
-            'email':user_details[3],
+            'email':user_details[1],
+            'firstName':user_details[2],
+            'lastName':user_details[3],
             'password':user_details[4],
             'accountType':user_details[5],
             'isAuthenticated':user_details[6],

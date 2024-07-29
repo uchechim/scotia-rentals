@@ -17,6 +17,7 @@ s3_client = boto3.client('s3', aws_access_key_id=aws_access_key_id,
                   aws_session_token=aws_session_token_id, 
                   region_name=region_name)
 
+
 s3_bucket = Config.S3_BUCKET
 
 aws_secrets_manager_client = boto3.client('secretsmanager', 

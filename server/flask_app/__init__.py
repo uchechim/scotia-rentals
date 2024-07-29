@@ -1,4 +1,5 @@
 #this file is used to define how the flask application is created.
+
 from flask import Flask
 from flask_cors import CORS
 from flask_app.routes.auth import auth_blueprint

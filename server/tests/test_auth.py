@@ -42,7 +42,20 @@ def test_signup(test_server):
     db_connection.commit()
     db_connection.close()
 
-'''
-def test_signin(test_client):
-    #Define test user to sign in
-    pass'''
+
+def test_signin(test_server):
+    #Test if signing in with a known user in the DB returns success message
+
+    userData = {
+        'email': 'l_lord@gmail.com',
+        'password': '1'
+    }
+
+    response = test_server.post('/signin', data=json.dumps(userData), content_type='application/json')
+
+    assert response.status_code == 200
+    assert response.json['message'] == 'Successfully Signed In'
+    assert response.json['user']['email'] == userData['email']
+
+
+    

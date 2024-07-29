@@ -1,4 +1,8 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 import os
+print(os.getenv('DB_HOST'))
 
 # Config class to access all environmental variables (abstracted from public) for this project
 class Config:
