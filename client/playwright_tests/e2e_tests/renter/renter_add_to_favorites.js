@@ -1,0 +1,1 @@
+// home page -> add favorites -> favorites page

@@ -1,4 +1,8 @@
 '''from flask import json
+
+need to install square SDK for python and generate a test nonce/token from the backend.
+
+
 from flask_app.services.db_services import connect_to_aws_db
 from flask_app.utils.helpers import hash_password
 

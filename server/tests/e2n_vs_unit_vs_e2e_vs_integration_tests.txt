@@ -1,0 +1,150 @@
+Summary
+
+--- Unit Tests: ---
+
+* Focus on individual components or endpoints.
+* Use mocking to isolate the unit under test.
+* Ensure that the unit functions correctly on its own.
+
+--- End-to-End (e2e) Tests ---
+
+Purpose:
+
+* Validate the entire application flow from the user's perspective.
+* Ensure that all components and services work together as expected.
+* Detect issues that might arise due to integration problems, UI issues, or unexpected behaviors.
+
+Focus:
+
+* Simulate real user interactions, such as clicking buttons, filling out forms, navigating between pages, etc.
+* Test the complete application workflow, from initial state to final state.
+* Verify that the application responds correctly to user inputs and performs the expected actions.
+
+--- Integration Tests ---
+
+Definition:
+* Integration tests are a type of software testing where individual units or components of an application are combined and tested as a group. 
+* The primary goal of integration testing is to verify that different modules or services within the application interact correctly 
+and work together as expected.
+
+Purpose:
+* Ensure that different parts of the system work together.
+* Detect issues that may arise from the interaction between integrated components.
+* Validate the communication between modules, such as function calls, data exchange, and interface compliance.
+
+Focus:
+* Interaction between integrated components, rather than the functionality of individual units.
+* Correct data exchange and control flow between modules.
+* The behavior of interfaces and dependencies between components.
+
+****** CLARIFYING EXAMPLE OF UNIT, INTEGRATION TESTS *****
+
+Clarifying Definitions
+
+Unit Tests:
+Focus on testing individual components or functions in isolation.
+Mock external dependencies, such as databases or external services, to ensure the unit of code is tested independently.
+
+Integration Tests:
+Focus on testing the interactions between integrated components within the application.
+Ensure that different parts of the system work together as expected.
+Typically involve real databases or services but are still within the same system.
+
+
+Unit Test for Property Listings:
+Testing the business logic for creating a property listing without actually interacting with the database.
+Mocking the database session to ensure the function behaves correctly in isolation.
+
+Example:
+import json
+from unittest.mock import patch
+from app import create_app
+
+@pytest.fixture(scope='module')
+def test_client():
+    flask_app = create_app()
+    flask_app.config.from_object('config.TestConfig')
+
+    with flask_app.test_client() as testing_client:
+        with flask_app.app_context():
+            yield testing_client
+
+def test_create_property_listing(test_client):
+    # Define test property data
+    test_property_data = {
+        'title': 'Test Property',
+        'description': 'A beautiful test property.',
+        'price': 1000,
+        'location': 'Test City'
+    }
+
+    # Mock the database session
+    with patch('app.models.db.session') as mock_db_session:
+        # Mock the commit method to avoid actual database interaction
+        mock_db_session.commit.return_value = None
+
+        # Mock an API call to create a property listing
+        response = test_client.post('/properties', data=json.dumps(test_property_data), content_type='application/json')
+
+        # Verify that the property listing was successfully created
+        assert response.status_code == 201
+        assert response.json['message'] == 'Property listing created successfully'
+
+        # Verify the database interactions
+        mock_db_session.add.assert_called_once()  # Ensure the add method was called
+        mock_db_session.commit.assert_called_once()  # Ensure the commit method was called
+
+
+Integration Test for Property Listings:
+Testing the creation, retrieval, update, and deletion of property listings using the actual database.
+Verifies that the application components (API endpoint and database) work together correctly.
+
+Example:
+
+import json
+import pytest
+from app import create_app
+from app.models import db, Property
+
+@pytest.fixture(scope='module')
+def test_client():
+    flask_app = create_app()
+    flask_app.config.from_object('config.TestConfig')
+
+    with flask_app.test_client() as testing_client:
+        with flask_app.app_context():
+            db.create_all()
+            yield testing_client
+            db.drop_all()
+
+def test_create_property_listing(test_client):
+    # Define test property data
+    test_property_data = {
+        'title': 'Test Property',
+        'description': 'A beautiful test property.',
+        'price': 1000,
+        'location': 'Test City'
+    }
+
+    # Call the API endpoint to create a property listing
+    response = test_client.post('/properties', data=json.dumps(test_property_data), content_type='application/json')
+
+    # Verify that the property listing was successfully created
+    assert response.status_code == 201
+    assert response.json['message'] == 'Property listing created successfully'
+
+    # Verify that the property exists in the database
+    property = Property.query.filter_by(title='Test Property').first()
+    assert property is not None
+    assert property.description == 'A beautiful test property.'
+    assert property.price == 1000
+    assert property.location == 'Test City'
+
+    # Clean up: Delete the test property
+    db.session.delete(property)
+    db.session.commit()
+
+Summary
+Unit Tests: Test individual functions or methods in isolation, often using mocks for external dependencies.
+Integration Tests: Test the interaction between different components within the application, such as between the API and the database.
+By clearly distinguishing between these types of tests and understanding their scope, you can create a comprehensive testing strategy that ensures your application is robust and reliable.
