@@ -53,7 +53,7 @@ jobs:
 
       - name: Push Flask Backend Image to DockerHub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/scotia-rentals-backend
+          docker push ${{ secrets.DOCKER_USERNAME }}/scotia-rentals-backend-image
 
       # 2- run backend tests
 
@@ -68,7 +68,7 @@ jobs:
 
       - name: Push React Frontend Image to DockerHub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME}}/scotia-rentals-frontend
+          docker push ${{ secrets.DOCKER_USERNAME}}/scotia-rentals-frontend-image
 
       # 2- run frontend tests
 
