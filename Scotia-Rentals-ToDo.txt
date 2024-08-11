@@ -1,12 +1,12 @@
 #### This file holds all bugs that I notice while developing the application.
 
-1 - Refactor backend to be modular (follow some form of design pattern for modern flask backend applications) - TODO
+1 - Refactor backend to be modular (follow some form of design pattern for modern flask backend applications) - DONE -> SECOND REVISION MAY BE NECESSARY (THINK GIT BRANCHES & DAVIDE COMPONENT SUGGESTIONS)
 
 2 - Address Dependabot Alerts - TODO
 
 3 - Update listings workflow to provide discreet renter-side & landlord-side listings. I.E -> Landlord should only be able to view their own listings - TODO
 
-4 - Find a way to abstract/hide all secrets from application both front-end and back-end. I.E AWS Access keys, passwords e.t.c in code should not be visible in the public git repository. - TODO
+4 - Find a way to abstract/hide all secrets from application both front-end and back-end. I.E AWS Access keys, passwords e.t.c in code should not be visible in the public git repository. - DONE
 
 5 - Fix rendering bug -> UI doesn't update properly whenever logging in. Must refresh to see the components correctly i.e Button styles e.t.c - TODO
 
@@ -22,13 +22,13 @@
 
 11 - Refactor REACT Model, Views, Controllers file/folder structure. Carefully Look into if it's implemented correctly (especially models & controllers). - TODO
 
-12 - Figure out why on login and page refresh, the listings component doesn't trigger getListings() - TODO
+12 - Figure out why on login and page refresh, the listings component doesn't trigger getListings() - DONE
 
 13 - Logged in user should be redirected to their respective homepages after navigating to another webpage and navigating back (sessions).
 
 14 - Signup/Signin with google. Email Verification based signup. MFA if necessary.
 
-15 - Implement security (discord pic) + OAUTH
+15 - Implement security (discord pic) + OAUTH + AWS WAF
 
 16 - Fix Unit Tests for Payment Module once Feature is thoroughly implemented.
 
