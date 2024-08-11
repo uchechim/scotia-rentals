@@ -1,0 +1,77 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    #Specify available containers during execution.
+    #Using docker since we're dockerizing front & backend
+    #privileged to allow extensive privledges within the containers
+    services:
+      docker:
+        image: docker:19.03.12
+        options: --privileged
+
+    #define the steps for the CI pipeline
+    #1 - checkout repo to be used for pipeline (git action)
+    #2 - setup docker build to build docker images (git action)
+    #3 - login to docker hub (git action)
+    #4 - build and push flask backend image to docker hub (docker actions)
+    #5 - build and push react frontend image to docker hub (docker actions)
+
+    #6 - run unit and integration tests within backend image
+    #7 - run microsoft playwright tests within frontend image
+    #8 - collect test coverage results and send to email.
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Build Action
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      #---Backend Steps---
+
+      # 1- build & push backend image
+      - name: Build Flask Backend Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/scotia-rentals-backend-image ./server
+
+      - name: Push Flask Backend Image to DockerHub
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/scotia-rentals-backend
+
+      # 2- run backend tests
+
+      # 3- archive results
+
+      #---Frontend Steps---
+
+      # 1- build & push frontend image
+      - name: Build React Frontend Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/scotia-rentals-frontend-image ./client
+
+      - name: Push React Frontend Image to DockerHub
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME}}/scotia-rentals-frontend
+
+      # 2- run frontend tests
+
+      # 3- archive results
+
+      #---Email archived TEST Coverage results to personal email---

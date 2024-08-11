@@ -66,9 +66,9 @@ const AddListingModal = ({ open, handleClose }) => {
     const AWS = require('aws-sdk');
 
     AWS.config.update({
-      accessKeyId: 'AKIAU6GDVWXLBIY6YJVU',
-      secretAccessKey: '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',
-      region: 'us-east-1',
+      accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+      region: process.env.REACT_APP_AWS_REGION,
     });
 
     const s3 = new AWS.S3({
