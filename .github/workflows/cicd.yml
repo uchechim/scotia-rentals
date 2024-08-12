@@ -77,7 +77,7 @@ jobs:
           pip install --upgrade --user awsebcli
           export PATH=$PATH:$HOME/.local/bin
 
-      #---Initialize Elastic Beanstalk (non-interactive)---
+      #---Initialize Elastic Beanstalk (non-interactive)-----
       - name: Initialize Elastic Beanstalk
         run: |
           eb init -p docker scotia-rentals-backend-app --region us-east-1
@@ -87,7 +87,7 @@ jobs:
 
       - name: Deploy Backend to Elastic Beanstalk
         run: |
-          eb deploy Scotia-rentals-docker-backend-env-1 --label "backend-v$(date +%Y%m%d%H%M%S)" --verbose
+          eb deploy Scotia-rentals-docker-backend-env-1 --label "backend-v-$(date +%Y%m%d%H%M%S)" --verbose
 
       #---Frontend Steps---
 
