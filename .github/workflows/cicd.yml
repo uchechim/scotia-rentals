@@ -60,13 +60,24 @@ jobs:
 
       # 3- archive results (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
 
+      # 4- Deploy backend to EBS
+
       #---Install Elastic Beanstalk CLI---
       - name: Install AWS Elastic Beanstalk CLI
         run: |
           pip install --upgrade --user awsebcli
           export PATH=$PATH:$HOME/.local/bin
 
-      # 4- Deploy backend to EBS
+      #---Initialize Elastic Beanstalk (non-interactive)---
+      - name: Initialize Elastic Beanstalk
+        run: |
+          eb init -p docker my-backend-app --region us-east-1 --platform docker --no-verify-ssl \
+            --region us-east-1 \
+            --application-name scotia-rentals-docker-backend \
+            --default-env Scotia-rentals-docker-backend-env-1 \
+            --no-setup \
+            --profile default
+
       - name: Deploy Backend to Elastic Beanstalk
         run: |
           eb deploy Scotia-rentals-docker-backend-env-1 --staged
