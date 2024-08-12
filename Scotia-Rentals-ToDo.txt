@@ -32,6 +32,8 @@
 
 16 - Fix Unit Tests for Payment Module once Feature is thoroughly implemented.
 
+17 - Add integration tests
+
 
 #### Future Plans
 
