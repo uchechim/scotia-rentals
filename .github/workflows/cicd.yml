@@ -95,9 +95,7 @@ jobs:
 
       - name: Create Application Version
         run: |
-          eb create-version --application scotia-rentals-backend-app \
-                            --version docker-v1-${{ env.TIMESTAMP }} \
-                            --source-bundle S3Bucket=elasticbeanstalk-us-east-1-339712783830,S3Key=scotia-rentals-backend-app/my-backend-app-${{ env.TIMESTAMP }}.zip
+          eb appversion create --label "docker-v1-${{ env.TIMESTAMP }}" --source-bundle S3Bucket=elasticbeanstalk-us-east-1-339712783830,S3Key=scotia-rentals-backend-app/my-backend-app-${{ env.TIMESTAMP }}.zip
 
       - name: Deploy Backend to Elastic Beanstalk
         run: |
