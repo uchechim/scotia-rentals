@@ -87,7 +87,7 @@ jobs:
         run: echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
 
       - name: Zip Application Source
-        run: zip -r my-backend-app-${{ env.TIMESTAMP }}.zip server/
+        run: zip -r my-backend-app-${{ env.TIMESTAMP }}.zip server/ Dockerfile
 
       - name: Upload Application to S3
         run: |
