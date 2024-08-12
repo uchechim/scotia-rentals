@@ -86,7 +86,7 @@ jobs:
         id: timestamp
         run: echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
 
-      # This step copies all contents of the "server/" directory directly into the root of the zip file
+      # This step copies all contents of the "server/" directory directly into the root of athe zip file
       - name: Prepare Application Bundle
         run: |
           cd server
