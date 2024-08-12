@@ -71,12 +71,7 @@ jobs:
       #---Initialize Elastic Beanstalk (non-interactive)---
       - name: Initialize Elastic Beanstalk
         run: |
-          eb init -p docker my-backend-app --region us-east-1 --platform docker --no-verify-ssl \
-            --region us-east-1 \
-            --application-name scotia-rentals-docker-backend \
-            --default-env Scotia-rentals-docker-backend-env-1 \
-            --no-setup \
-            --profile default
+          eb init -p docker scotia-rentals-backend-app --region us-east-1
 
       - name: Deploy Backend to Elastic Beanstalk
         run: |
