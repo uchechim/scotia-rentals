@@ -13,8 +13,8 @@ COPY . /app
 #dont cache packages
 RUN pip install --no-cache-dir -r requirements.txt
 
-#Expose docker container using port 5000
-EXPOSE 5000
+#Expose docker container using port 8080
+EXPOSE 8080
 
 #Run application
 CMD ["python", "application.py"]
