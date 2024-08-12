@@ -82,9 +82,12 @@ jobs:
         run: |
           eb init -p docker scotia-rentals-backend-app --region us-east-1
 
+      - name: Wait before deploying
+        run: sleep 10
+
       - name: Deploy Backend to Elastic Beanstalk
         run: |
-          eb deploy Scotia-rentals-docker-backend-env-1 --verbose
+          eb deploy Scotia-rentals-docker-backend-env-1 --label "backend-v$(date +%Y%m%d%H%M%S)" --verbose
 
       #---Frontend Steps---
 
