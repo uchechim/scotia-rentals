@@ -82,6 +82,10 @@ jobs:
         run: |
           eb init -p docker scotia-rentals-docker-backend --region us-east-1
 
+      - name: Delete existing application version from S3
+        run: |
+          aws s3 rm s3://elasticbeanstalk-us-east-1-339712783830/scotia-rentals-backend-app/1723443489050-application-v1.zip --region us-east-1
+
       - name: Wait before deploying
         run: sleep 10
 
