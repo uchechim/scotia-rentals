@@ -82,10 +82,20 @@ jobs:
         run: |
           eb init -p docker scotia-rentals-backend-app --region us-east-1
 
-      #---Deploy the Docker image to Elastic Beanstalk---
+      - name: Set Timestamp
+        id: timestamp
+        run: echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
+      # Ensure Application Version is Uploaded to S3
+      - name: Create Application Version
+        run: |
+          eb init -p docker scotia-rentals-backend-app --region us-east-1
+          eb create docker-v1-${{ env.TIMESTAMP }} --verbose
+
+      # Deploy the correct version
       - name: Deploy Backend to Elastic Beanstalk
         run: |
-          eb deploy Scotia-rentals-docker-backend-env-1 --label "docker-v1-7" --staged --verbose
+          eb deploy Scotia-rentals-docker-backend-env-1 --label "docker-v1-${{ env.TIMESTAMP }}" --verbose
 
       #---Frontend Steps---
 
