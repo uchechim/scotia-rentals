@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -28,9 +28,10 @@ jobs:
     #4 - build and push flask backend image to docker hub (docker actions)
     #5 - build and push react frontend image to docker hub (docker actions)
 
-    #6 - run unit and integration tests within backend image
-    #7 - run microsoft playwright tests within frontend image
-    #8 - collect test coverage results and send to email.
+    #6 - run unit and integration tests within backend image (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
+    #7 - run microsoft playwright tests within frontend image (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
+    #8 - deploy backend and front-end to EBS and EC2.
+    #9 - collect test coverage results and send to email.
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -55,9 +56,14 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/scotia-rentals-backend-image
 
-      # 2- run backend tests
+      # 2- run backend tests (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
 
-      # 3- archive results
+      # 3- archive results (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
+
+      # 4- Deploy backend to EBS
+      - name: Deploy Backend to Elastic Beanstalk
+        run: |
+          eb deploy Scotia-rentals-docker-backend-env-1 --staged
 
       #---Frontend Steps---
 
@@ -70,8 +76,10 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME}}/scotia-rentals-frontend-image
 
-      # 2- run frontend tests
+      # 2- run frontend tests (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
 
-      # 3- archive results
+      # 3- archive results (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
+
+      # 4- Deploy frontend to EC2
 
       #---Email archived TEST Coverage results to personal email---
