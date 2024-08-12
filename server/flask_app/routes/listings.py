@@ -58,7 +58,7 @@ def addListing():
 #two-step process, get the listing data from the data base, then also retrive the image url from S3 bucket.
 @listings_blueprint.route("/get-listings", methods=["GET"])
 def getListings():
-
+    db_connection = connect_to_aws_db()
     try:
         s3_bucket_content = list_s3_objects() #list all the contents currently present in the s3 bucket
 
@@ -67,7 +67,7 @@ def getListings():
             return make_response({'message': "Failed to fetch S3 bucket objects"}, 500)
 
         #connect to db and query all existing listings
-        db_connection = connect_to_aws_db()
+        
         cursor = db_connection.cursor()
 
         cursor.execute("USE scotiaRentalDB")
