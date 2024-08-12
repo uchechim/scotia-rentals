@@ -100,7 +100,7 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME}}/scotia-rentals-frontend-image
 
-      # 2- run frontend tests (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
+      # 2- run frontend tests (this can be split into another pipline. this cicd pipeline can depend on the "te/sts.yml" pipeline)
 
       # 3- archive results (this can be split into another pipline. this cicd pipeline can depend on the "tests.yml" pipeline)
 
