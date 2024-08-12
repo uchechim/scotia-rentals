@@ -93,7 +93,7 @@ jobs:
       # Upload the application version to S3
       - name: Upload Application Version to S3
         run: |
-          aws s3 cp my-backend-app-${{ env.TIMESTAMP }}.zip s3://elasticbeanstalk-us-east-1-339712783830/scotia-rentals-backend-app/ --debug
+          aws s3 cp my-backend-app-${{ env.TIMESTAMP }}.zip s3://elasticbeanstalk-us-east-1-339712783830/scotia-rentals-backend-app/ --region us-east-1
 
       # Create the new application version in Elastic Beanstalk
       - name: Create Application Version
