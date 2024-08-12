@@ -87,7 +87,7 @@ jobs:
 
       - name: Deploy Backend to Elastic Beanstalk
         run: |
-          eb deploy Scotia-rentals-docker-backend-env-1 --label "docker-v1-7" --verbose
+          eb deploy Scotia-rentals-docker-backend-env-1 --label "docker-v1-7" --staged --verbose
 
       #---Frontend Steps---
 
