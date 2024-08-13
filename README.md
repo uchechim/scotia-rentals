@@ -137,7 +137,7 @@ Uchenna Chima
     - Integrated a P.O.C Payment feature with Square
     - Modularized The Application's Backend To Foster Maintainability
     - Added unit tests using PyTest
-    - TODO: Added Automated tests (e2e - (end-to-end)) using Microsoft Playwright Framework
+    - TODO: Added Automated tests (e2e - (end-to-end)) using Cypress
     - Integrate CI/CD Pipeline
     - Containerized Application using Docker
 
