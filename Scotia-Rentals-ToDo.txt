@@ -34,6 +34,8 @@
 
 17 - Add integration tests
 
+18 - Create AWS Scripts to manage services (booting up and shutting down). These scripts should be able to be executed via AWS CLI
+
 
 #### Future Plans
 
