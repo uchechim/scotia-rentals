@@ -105,8 +105,7 @@ The purpose of this application is to create a safe envorionment for landlords a
 
 #### Frontend Setup
 
-- To configure the front-end using EC2 + NGINX please refer to my video (https://www.youtube.com/watch?v=f8IwHnqSl2U)
-- Time Stamp: 8:41 - 14:31
+- To configure the front-end using EC2 + NGINX please refer to my video (https://www.youtube.com/watch?v=uqr-cDW6sKs)
 
 #### Backend Setup
 

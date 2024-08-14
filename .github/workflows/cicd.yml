@@ -88,22 +88,22 @@ jobs:
         id: timestamp
         run: echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
 
-      # This step copies all contents of the "server/" directory directly into the root of athe zip file
-      - name: Prepare Application Bundle
+      # This step zips the Dockerrun.aws.json file in order to allow my EBS environment to refer to my docker image uploaded to docker hub.
+      - name: Prepare Application Bundle (Dockerrun reference)
         run: |
           cd server
-          zip -r ../my-backend-app-${{ env.TIMESTAMP }}.zip *
+          zip -r ../scotia-backend-app-${{ env.TIMESTAMP }}.zip Dockerrun.aws.json
 
       - name: Upload Application to S3
         run: |
-          aws s3 cp my-backend-app-${{ env.TIMESTAMP }}.zip s3://elasticbeanstalk-us-east-1-339712783830/scotia-rentals-backend-app/ --region us-east-1
+          aws s3 cp scotia-backend-app-${{ env.TIMESTAMP }}.zip s3://elasticbeanstalk-us-east-1-339712783830/scotia-rentals-backend-app/ --region us-east-1
 
       - name: Create Application Version
         run: |
           aws elasticbeanstalk create-application-version \
             --application-name scotia-rentals-docker-backend \
             --version-label "docker-v1-${{ env.TIMESTAMP }}" \
-            --source-bundle S3Bucket=elasticbeanstalk-us-east-1-339712783830,S3Key=scotia-rentals-backend-app/my-backend-app-${{ env.TIMESTAMP }}.zip \
+            --source-bundle S3Bucket=elasticbeanstalk-us-east-1-339712783830,S3Key=scotia-rentals-backend-app/scotia-backend-app-${{ env.TIMESTAMP }}.zip \
             --region us-east-1
 
       - name: Deploy Backend to Elastic Beanstalk

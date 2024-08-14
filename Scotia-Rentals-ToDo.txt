@@ -42,3 +42,39 @@
 1 - Revamp Frontend
 2 - Rebrand Application (new name, new look, e.t.c)
 3 - Integrate some ML/AI features to further modernize the application
+
+
+
+
+#Next Project Goals:
+
+08/12 recap:
+
+#1) Agreed on deployment stategy and management of the endpoint PREFIX in the prefond 
+    (Cache the value somewhere and inject via .env a debug state which switch between 127.0.0x and your endpoint => Make sure you have a static IP (aka: does not change each time you reboot the machine);
+
+#2) Pivot into e2e with cypress => Above in the chat the link
+
+#3) MAKE a 2 hours experiment to run the SAME pipeline which is passing in github action, in jenkins 
+    (you can SKIP the e2e integration part);Then go into your CV and put CI/CD with Github action and Jenkins there;
+
+#4) In your project make a functionality: Such happy birthday to my user, which runs On daily basis, and if today is an user date of birthday, send an email saying happy birthday;
+
+--- ADDITIONAL FUNCTIONALITIES ---
+#1) Enable GitGuardian
+
+#2) Test Pipeline with code coverage - https://docs.codecov.com/docs/impact-analysis-quickstart-python
+
+#3) Your application must be accessible via ssl (you must do manually, the ssl certificate, via openssl and certabot).
+
+#4) Study what is a feature flag, in software engineer, and apply it to your project:
+https://cfpb.github.io/django-flags/conditions/ => IN Django exists,
+probably also in Flask.
+
+#5) Profiling:
+- if your project has RESTFUL apis, you must profile them using an existing
+profiling library. By profiling we mean:
+- Measure the number of requests done to a certain endpoint and measure
+automatically its response time (performances) and report them in a
+built-in dashboard. This is almost 0 code work, research + integration,
+and knowing that these things exist.
