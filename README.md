@@ -123,6 +123,3 @@ The purpose of this application is to create a safe envorionment for landlords a
 
 - https://www.linkedin.com/in/uchenna-chima-15123b152/
 - https://www.youtube.com/@uchecodez
-
-## Misc
-**Working on improvements with Davide Pollicino - https://github.com/omonimus1**
