@@ -9,7 +9,7 @@
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^5.16.7",
     "@reduxjs/toolkit": "^2.2.1",
     "@square/web-sdk": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
