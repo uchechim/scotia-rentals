@@ -3,7 +3,7 @@ requests==2.31.0
 boto3==1.34.54
 Werkzeug==3.0.1
 PyMySQL==1.1.0
-Flask-Cors==4.0.0
+Flask-Cors==5.0.0
 flake8==7.1.0
 squareup==37.1.1.20240717
 pytest==8.3.2
