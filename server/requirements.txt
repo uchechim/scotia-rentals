@@ -8,4 +8,4 @@ flake8==7.1.0
 squareup==37.1.1.20240717
 pytest==8.3.2
 python-dotenv==0.19.2
-gunicorn==20.1.0
+gunicorn==23.0.0
